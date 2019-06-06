@@ -18,7 +18,7 @@ public class TargetProxy2{
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 Object returnValue;
-                if("method1".equals(method.getName())){// 此处可对方法进行筛选，否则全部方法都会被扩展
+                if("back".equals(method.getName())){// 此处可对方法进行筛选，否则全部方法都会被扩展
                     beforeMethod();
                     returnValue = method.invoke(target, args);
                     afterMethod();
